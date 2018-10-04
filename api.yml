@@ -1,0 +1,62 @@
+swagger: '2.0'
+info:
+  description: defaultDescription
+  version: '0.1'
+  title: defaultTitle
+paths:
+  /employees/:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: '#/definitions/Model0'
+definitions:
+  Array:
+    properties:
+      id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      age:
+        type: integer
+        format: int32
+      title:
+        type: string
+      email:
+        type: string
+      salary:
+        type: number
+        format: double
+      headquarter:
+        type: integer
+        format: int32
+      status:
+        type: boolean
+      username:
+        type: string
+      password:
+        type: string
+      identification:
+        type: string
+      phone:
+        type: string
+      ip:
+        type: string
+      token:
+        type: string
+      operation:
+        type: integer
+        format: int32
+      created_at:
+        type: string
+      last_login:
+        type: string
+  Model0:
+    type: array
+    items:
+      $ref: '#/definitions/Array'
