@@ -4,16 +4,23 @@ info:
   version: '0.1'
   title: defaultTitle
 paths:
-  /employees/:
+  '/{param0}':
     get:
       produces:
         - application/json
-      parameters: []
+      parameters:
+        - name: param0
+          in: path
+          description: 'Example values form path are: ''employees'' and ''users'''
+          required: true
+          type: string
       responses:
         '200':
           description: Definition generated from Swagger Inspector
           schema:
             $ref: '#/definitions/Model0'
+        default:
+          description: Definition generated from Swagger Inspector
 definitions:
   Array:
     properties:
