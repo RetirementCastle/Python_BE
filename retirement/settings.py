@@ -83,12 +83,23 @@ WSGI_APPLICATION = 'retirement.wsgi.application'
 #    }
 #}
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'gestioninterna',
+#        'USER': 'root',
+#        'PASSWORD': '123456',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gestioninterna',
-        'USER': 'root',
-        'PASSWORD': '123456',
+        'ENGINE': 'django.db.backends.mysql', #django.db.backends.mysql 
+        'NAME': 'gestioninterna', #local: libraries #server: 
+        'USER': 'root', #root #root
+        'PASSWORD': '123456', #local: root #server: 
+        'HOST': 'db', #local: localhost  #server:
+        'PORT': '3306',
     }
 }
 
