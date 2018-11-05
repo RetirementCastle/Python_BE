@@ -76,6 +76,8 @@ WSGI_APPLICATION = 'retirement.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+
+#LOCAL DATABASE
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
@@ -83,6 +85,7 @@ WSGI_APPLICATION = 'retirement.wsgi.application'
 #    }
 #}
 
+#MY MYSQL DATABASE
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
@@ -92,16 +95,30 @@ WSGI_APPLICATION = 'retirement.wsgi.application'
 #    }
 #}
 
+#DOCKER DATABASE
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql', #django.db.backends.mysql 
+#        'NAME': 'gestioninterna', #local: libraries #server: 
+#        'USER': 'root', #root #root
+#        'PASSWORD': '123456', #local: root #server: 
+#        'HOST': 'db', #local: localhost  #server:
+#        'PORT': '3309',
+#    }
+#}
+
+#REMOTE DATABASE
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', #django.db.backends.mysql 
-        'NAME': 'gestioninterna', #local: libraries #server: 
-        'USER': 'root', #root #root
-        'PASSWORD': '123456', #local: root #server: 
-        'HOST': 'db', #local: localhost  #server:
-        'PORT': '3306',
+        'NAME': 'instance_retirement', #local: libraries #server: 
+        'USER': 'instance_retirem', #root #root
+        'PASSWORD': 'Ret2018@', #local: root #server: 
+        'HOST': '192.99.186.112', #local: localhost  #server:
+        'PORT': '',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -139,4 +156,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
