@@ -111,10 +111,10 @@ WSGI_APPLICATION = 'retirement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', #django.db.backends.mysql 
-        'NAME': 'instance_retirement', #local: libraries #server: 
-        'USER': 'instance_retirem', #root #root
+        'NAME': 'shape_retirement', #local: libraries #server: 
+        'USER': 'shape_retirem', #root #root
         'PASSWORD': 'Ret2018@', #local: root #server: 
-        'HOST': '192.99.186.112', #local: localhost  #server:
+        'HOST': '104.248.228.108', #local: localhost  #server:
         'PORT': '',
     }
 }
@@ -138,6 +138,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        #'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAdminUser',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
