@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import date
+from django_auth_ldap.backend import LDAPBackend
 
 class Employee(models.Model):
 	name = models.TextField()
@@ -21,6 +22,24 @@ class Employee(models.Model):
 
 	def __str__(self):
 		return self.name
+
+
+def authenticate_credentials(self, payload):
+    try:
+        username = payload.get('username')
+
+        if username:
+            user = User.objects.get(pk=username, is_active=True)
+            user = LDAPBackend().authenticate(username, password)
+        else:
+            msg = 'Invalid payload'
+            raise exceptions.AuthenticationFailed(msg)
+    except User.DoesNotExist:
+        msg = 'Invalid signature'
+        raise exceptions.AuthenticationFailed(msg)
+
+    return user
+
 
 
 class User(models.Model):

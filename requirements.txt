@@ -3,3 +3,5 @@ gunicorn==19.7.1
 djangorestframework
 djangorestframework-jwt
 pymysql
+python-ldap
+django-auth-ldap
