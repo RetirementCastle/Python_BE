@@ -199,28 +199,28 @@ WSGI_APPLICATION = 'retirement.wsgi.application'
 #}
 
 #REMOTE DATABASE
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', #django.db.backends.mysql 
-        'NAME': 'shape_retirement', #local: libraries #server: 
-        'USER': 'shape_retirem', #root #root
-        'PASSWORD': 'Ret2018@', #local: root #server: 
-        'HOST': '69.55.59.217', #local: localhost  #server:
-        'PORT': '',
-    }
-}
-
-
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql', #django.db.backends.mysql 
 #        'NAME': 'shape_retirement', #local: libraries #server: 
-#        'USER': 'generic_test', #root #root
-#        'PASSWORD': 'Arquitectura2018', #local: root #server: 
-#        'HOST': '107.180.54.252', #local: localhost  #server:
-#        'PORT': '3306',
+#        'USER': 'shape_retirem', #root #root
+#        'PASSWORD': 'Ret2018@', #local: root #server: 
+#        'HOST': '69.55.59.217', #local: localhost  #server:
+#        'PORT': '',
 #    }
 #}
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', #django.db.backends.mysql 
+        'NAME': 'shape_retirement', #local: libraries #server: 
+        'USER': 'generic_test', #root #root
+        'PASSWORD': 'Arquitectura2018', #local: root #server: 
+        'HOST': '107.180.54.252', #local: localhost  #server:
+        'PORT': '3306',
+    }
+}
 
 
 
