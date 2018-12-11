@@ -8,9 +8,10 @@ from .serializers import UserSerializer
 
 
 class EmployeeView(viewsets.ModelViewSet):
-	queryset = Employee.objects.all() 
+	queryset = Employee.objects.all()
 	#queryset = LDAPBackend().authenticate(username, password)
 	serializer_class = EmployeeSerializer
+
 
 	def authenticate_credentials(self, payload):
 		try:
@@ -25,7 +26,7 @@ class EmployeeView(viewsets.ModelViewSet):
 			msg = 'Invalid signature'
 			raise exceptions.AuthenticationFailed(msg)
 
-		return user 
+		return user
 
 
 class UserView(viewsets.ModelViewSet):
